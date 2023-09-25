@@ -111,6 +111,8 @@ func AddRecipeToFavorites(c *gin.Context) {
         c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error"})
         return
     }
+    //  like the recipe
+    
 	recipe.Nbr_likes ++
 	database.Instance.Save(&recipe)
 	
